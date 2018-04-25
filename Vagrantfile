@@ -9,11 +9,8 @@ Vagrant.configure('2') do |config|
     vb.memory = '4096'
   end
 
-  # View the documentation for the provider you are using for more
-  # information on available options.
-
+  config.vm.provision 'shell', path: 'install-docker.sh'
   config.vm.provision 'shell', inline: <<-SHELL
-    curl https://get.docker.com | sh
     docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/server:preview
   SHELL
 end
