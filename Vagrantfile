@@ -9,6 +9,7 @@ Vagrant.configure('2') do |config|
   config.vm.provider 'virtualbox' do |vb|
     vb.cpus = 2
     vb.memory = 2048
+    # vb.customize ['modifyvm', :id, '--natnet1', '172.16.1.0/24']
   end
 
   config.vm.provision 'shell', path: 'install-docker.sh'
