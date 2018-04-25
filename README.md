@@ -3,3 +3,10 @@
 
 - cli
   - https://github.com/rancher/cli
+
+```
+vagrant up
+vagrant ssh master -c ''
+vagrant ssh node1 -c ''
+vagrant ssh node2 -c ''
+```
